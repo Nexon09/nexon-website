@@ -6,23 +6,23 @@
   <title>NEXON</title>
   <style>
     :root{
-      --bg:#111315;           /* page background */
-      --panel:#1a1d20;        /* cards / sections */
-      --text:#d6d6d6;         /* body text color */
-      --muted:#9aa0a6;        /* muted text */
+      --bg:#111315;
+      --panel:#1a1d20;
+      --text:#d6d6d6;
+      --muted:#9aa0a6;
       --white:#ffffff;
-      --accent:#00e5ff;       /* cyan accent from screenshot */
-      --heading:#eaeaea;      /* heading color */
-      --divider:#24272b;      /* subtle divider */
+      --accent:#00e5ff;
+      --heading:#eaeaea;
+      --divider:#24272b;
       --radius:22px;
-      --container:820px;      /* content max width */
+      --container:820px;
     }
 
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background:var(--bg);
       color:var(--text);
       line-height:1.6;
@@ -34,7 +34,8 @@
 
     /* --- Header / Logo --- */
     header{display:flex;align-items:center;gap:14px;padding:14px 0 18px}
-    .logo-blob{width:42px;height:28px;display:inline-block}
+    .logo-blob{width:46px;height:46px;display:inline-block;border-radius:12px;overflow:hidden}
+    .logo-blob img{width:100%;height:100%;object-fit:contain}
     .brand{font-weight:800;letter-spacing:0.4px;color:var(--white);font-size:28px}
 
     .divider{height:1px;background:var(--divider);margin:6px 0 18px}
@@ -49,23 +50,26 @@
     /* --- Promo / Banner Card --- */
     .promo{
       margin:34px 0 34px;
-      background:#0f1113;
       border-radius:26px;
       padding:0;
       position:relative;
       overflow:hidden;
       border:1px solid #1f2327;
-      min-height:190px;
-      display:flex;align-items:center
+      min-height:220px;
+      display:flex;align-items:center;
+      background:url("Picsart_25-08-17_19-51-51-230.jpg") center/cover no-repeat;
     }
-    /* stylized cyan stripes (left) */
-    .promo:before,.promo:after{
-      content:"";position:absolute;left:-40px;top:-20px;bottom:-20px;width:90px;transform:skewX(-18deg);background:linear-gradient(180deg,transparent 0 18%,var(--accent) 18% 34%,transparent 34% 66%,var(--accent) 66% 82%,transparent 82% 100%);
-      opacity:.9;filter:saturate(120%);
-    }
-    .promo:after{left:auto;right:-160px;top:auto;bottom:auto;height:120%;width:190px;transform:rotate(28deg);background:linear-gradient(180deg,transparent 0 35%,#ffffff12 35% 65%,transparent 65% 100%)}
 
-    .promo-inner{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;width:100%;padding:24px 24px}
+    .promo-inner{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:20px;
+      align-items:center;
+      width:100%;
+      padding:24px 24px;
+      background:rgba(0,0,0,0.55);
+      border-radius:26px;
+    }
 
     .promo-title{font-size:28px;font-weight:900;color:var(--white);line-height:1.2;letter-spacing:.3px}
     .promo-title .sym{color:var(--accent)}
@@ -74,13 +78,13 @@
 
     .promo-badge{
       width:110px;height:110px;border-radius:50%;
-      display:grid;place-items:center;position:relative;overflow:hidden;
-      background:radial-gradient(100px 100px at 30% 30%, #2a2f34 0, #16191c 60%, #101214 100%);
+      display:grid;place-items:center;
+      background:#fff;
+      overflow:hidden;
       border:3px solid #3a3f46;
       box-shadow:0 0 0 6px #0b0d10 inset;
-      margin-right:8px;
     }
-    .promo-badge svg{width:62%;height:62%}
+    .promo-badge img{width:100%;height:100%;object-fit:contain}
 
     /* --- Additional Notes --- */
     .notes{margin:28px 0 24px}
@@ -95,27 +99,16 @@
     }
     .icon:hover{transform:translateY(-2px);border-color:#2f353c}
     .icon svg{width:62%;height:62%;display:block}
-
-    /* --- Responsive Tweaks for small screens --- */
-    @media (max-width:420px){
-      .welcome{font-size:34px}
-      .subhead{font-size:22px}
-      .promo-title{font-size:22px}
-      .promo-sub{font-size:16px}
-      .promo-verify{font-size:14px}
-      .promo-inner{grid-template-columns:1fr auto;gap:14px;padding:18px}
-      .promo-badge{width:92px;height:92px}
-    }
   </style>
 </head>
 <body>
   <main class="wrap">
     <!-- Top brand -->
     <header>
-      <!-- Teal blob logo (SVG) -->
-      <img src="logo.png" alt="NEXON Logo" class="logo-blob">
-      <path fill="var(--accent)" d="M67.6 8.5c7.6 4.2 13.1 11 14 18.6.7 6.2-2.3 12.2-7.6 16-4.9 3.6-11.4 5.1-17.8 5.6-7.3.5-14.9-.2-21.6-2.6C25.2 42.9 18 39 13.8 33.5c-3.4-4.5-4.5-10-1.8-14.8 2.7-4.7 9.1-8.6 17.3-10.7 7.9-2.1 17.6-2.5 26 .1 4.6 1.4 8.8 3.4 12.3 6.4z"/>
-      </svg>
+      <!-- New Logo Image -->
+      <div class="logo-blob">
+        <img src="logo.jpg" alt="NEXON Logo">
+      </div>
       <div class="brand">NEXON</div>
     </header>
     <div class="divider"></div>
@@ -128,12 +121,19 @@
       NEXON is a community-driven utility token built on the Binance Smart Chain (BSC). It is designed to provide users with access to the project's ecosystem, including features such as community engagement, staking rewards, and future platform services. NEXON aims to combine transparency, usability, and growth opportunities for its holders while fostering an active and vibrant community.
     </p>
 
-    <!-- Promo / banner (styled to resemble the image section) -->
+    <!-- Promo / banner -->
     <section class="promo" aria-label="NEXON Token Promo">
-  <video width="100%" controls autoplay muted loop style="border-radius:20px;">
-    <source src="banner.mp4" type="video/mp4">
-  </video>
-</section>
+      <div class="promo-inner">
+        <div>
+          <div class="promo-title"><span class="sym">$</span>NEXON TOKEN</div>
+          <div class="promo-sub">INFORMATION FULLY</div>
+          <div class="promo-verify">VERIFIED ON BSCScan!</div>
+        </div>
+        <div class="promo-badge">
+          <img src="logo.jpg" alt="NEXON Badge Logo">
+        </div>
+      </div>
+    </section>
 
     <!-- Additional Notes -->
     <section class="notes">
@@ -144,18 +144,11 @@
 
     <!-- Social buttons -->
     <nav class="socials" aria-label="Social Links">
-      <!-- X / Twitter -->
       <a class="icon" aria-label="Twitter" href="https://x.com/globalnexon" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M18.244 2H21.5l-7.6 8.69L22.5 22h-6.2l-4.85-5.59L5.8 22H2.5l8.15-9.32L1.9 2h6.3l4.38 5.02L18.244 2Zm-2.17 18h1.71L7.01 3.94H5.21L16.074 20Z" fill="#fff"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none"><path d="M18.244 2H21.5l-7.6 8.69L22.5 22h-6.2l-4.85-5.59L5.8 22H2.5l8.15-9.32L1.9 2h6.3l4.38 5.02L18.244 2Zm-2.17 18h1.71L7.01 3.94H5.21L16.074 20Z" fill="#fff"/></svg>
       </a>
-
-      <!-- Telegram -->
       <a class="icon" aria-label="Telegram" href="https://t.me/globalnexons" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M9.036 15.803l-.375 5.287c.536 0 .768-.231 1.044-.509l2.508-2.413 5.197 3.807c.953.528 1.632.25 1.892-.884l3.429-16.06h.001c.304-1.419-.512-1.973-1.44-1.628L1.115 9.87c-1.38.536-1.359 1.306-.235 1.653l5.593 1.746 12.99-8.191c.61-.37 1.165-.166.708.204L9.036 15.803z" fill="#fff"/>
-        </svg>
+        <svg viewBox="0 0 24 24"><path d="M9.036 15.803l-.375 5.287c.536 0 .768-.231 1.044-.509l2.508-2.413 5.197 3.807c.953.528 1.632.25 1.892-.884l3.429-16.06h.001c.304-1.419-.512-1.973-1.44-1.628L1.115 9.87c-1.38.536-1.359 1.306-.235 1.653l5.593 1.746 12.99-8.191c.61-.37 1.165-.166.708.204L9.036 15.803z" fill="#fff"/></svg>
       </a>
     </nav>
   </main>
